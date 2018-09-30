@@ -8,7 +8,7 @@ This challenge was relatively easier. Going to given URL, you'd apparently see n
 
 Hint 1: see how base64 is written. It is reversed. All given links were in the format:
 
-z3phyr.cf/web-challenges/<base64_string>
+`/<base64_string>`
 
 this base64_string was a number in all examples. `MQ==` in base64 is 1, `Mg==` in base64 is 2 and so on.
 Number 5, i.e. `/NQ==` showed an interesting result. Instead of outputting 5 on screen, it outputted 'hmm..' which implies that the answers to these calls are somehow hardcoded on backend.
@@ -24,7 +24,7 @@ At this time, you have a couple of observations:
 1. The values are hardcoded
 2. The `/<base64_string>` here is reversed, i.e. to get what you want, you have to not only base64 encode it, but reverse it also.
 
-You had to base64_encode("flag"), but it won't work, hence, you had to encode "galf" => "Z2FsZg==" and visit z3phyr.cf/web-challenges/Z2FsZg== to get the flag.
+You had to `base64_encode("flag")`, but it won't work, hence, you had to encode `"galf" => "Z2FsZg=="` and visit `/Z2FsZg==` to get the flag.
 
 ## 3. Cookie Treat
 
